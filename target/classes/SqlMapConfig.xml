@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 上面是 mybatis 的约束，此处注释掉是为了自定义一个 mybatis-->
+<!-- myBatis 的主配置文件-->
+<configuration>
+    <!-- 配置环境 -->
+    <environments default="mysql">
+        <!-- 配置 mysql 的环境-->
+        <environment id="mysql">
+            <!-- 配置事务的类型 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 配置数据源（连接池）-->
+            <dataSource type="POOLED">
+                <!-- 配置连接数据库的 4 个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/cyt_mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+            <!-- 此处记录一个报错： property name 的顺序和内容必须如上一致，否则会报错 BuilderException:Error parsing SQL Mapper Configuration.. unknown DataSource property user-->
+        </environment>
+    </environments>
+    <!-- 指定映射配置文件的位置，映射配置文件指的是每个 dao 独立的配置文件
+         如果使用注解来配置的话，此处应使用 class 属性指定被注解的 dao 全限定类名
+    -->
+    <mappers>
+<!--        <mapper resource="com/cyt/dao/IUserDao.xml"/>-->
+        <mapper class="com.cyt.dao.IUserDao"/>
+    </mappers>
+</configuration>

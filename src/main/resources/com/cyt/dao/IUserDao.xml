@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyt.dao.IUserDao">
+    <!-- 注意事项：
+    1) mybatis 的映射配置文件位置必须和dao接口的包结构相同;
+    2) 映射配置文件的 mapper 标签 namespace 属性的取值必须是 dao 接口的全限定类名；
+    3） 映射配置文件的操作配置，id 属性的取值必须是 dao 接口的方法名；
+    优势：开发中无须写 dao 的实现类；
+    -->
+    <!-- 配置查询所有 -->
+    <select id="findAll" resultType="com.cyt.domain.User">
+        select * from user
+    </select>
+</mapper>
