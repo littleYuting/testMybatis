@@ -1,10 +1,14 @@
 package com.cyt.dao.impl;
 
 import com.cyt.dao.IUserDao;
+import com.cyt.domain.QueryVo;
 import com.cyt.domain.User;
+import com.cyt.domain.User1;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import java.util.List;
+import java.util.Map;
 
 public class UserDaoImpl implements IUserDao {
 
@@ -45,4 +49,64 @@ public class UserDaoImpl implements IUserDao {
          * 把这两个信息组合起来定义成一个对象 Mapper, 最终返回一个结果 map ，key:com.cyt.dao.IUserDao.findAll; value(Mapper): String domainClassPath,String sql
          */
     }
+
+    @Override
+    public User findUserById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public void saveUser(User user) {
+
+    }
+
+    @Override
+    public void updateUser(User user) {
+
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+
+    }
+
+    @Override
+    public List<User> findByName(String name) {
+        return null;
+    }
+
+    @Override
+    public Integer findTotal() {
+        return null;
+    }
+
+    @Override
+    public List<User> findUserByVo(QueryVo vo) {
+        return null;
+    }
+
+    @Override
+    public List<User1> findUserByCondition(User1 user) {
+        return null;
+    }
+
+    @Override
+    public List<User> findUserInIds(QueryVo vo) {
+        return null;
+    }
+
+    @Override
+    public List<User> testChooseLabel(User user) {
+        return null;
+    }
+
+    @Override
+    public void testSetLabel(User user) {
+    }
+
+    @Override
+    public void testMapLabel(@Param(value = "userMaps") Map<String, Object> userMap) {
+
+    }
+
 }

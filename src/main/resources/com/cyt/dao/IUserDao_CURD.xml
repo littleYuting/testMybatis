@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  数据表查询结果的列名与实体类属性名称不一致
+    解决1 (起别名)： select id as userId,....  from user;
+    解决2（resultMap）：
+        <resultMap id="userMao" type="com.cyt.domain.User">
+        <id property="userId" column="id"></id>
+        <result property="userName" column="username"></result>
+        .....
+    </resultMap>
+-->
+<mapper namespace="com.cyt.dao.IUserDao">
+    <!--PreparedStatement对象的执行方法
+        1. execute:能执行CRUD中的任意一种语句，返回值是一个boolean类型，表示是否有结果集；
+        2. executeUpdate：只能执行CUD语句，查询语句无法执行，返回值是影响数据库记录的行数
+        3. executeQuery: 只能执行SELECT语句，无法执行增删改，执行结果封装的结果集ResultSet对象
+    -->
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+<!--    <select id="findUserById" parameterType="java.lang.Integer" resultMap="userMap">-->
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.cyt.domain.User">
+        select * from user where id=#{id}
+    </select>
+    <select id="findByName" parameterType="string" resultType="com.cyt.domain.User">
+        <!-- select * from user where username like #{name} -->
+        select * from user where username like '%${value}%'
+    </select>
+    <!-- 根据 queryVo 的条件查询用户 -->
+    <select id="findUserByVo" parameterType="com.cyt.domain.QueryVo" resultType="com.cyt.domain.User">
+        select * from user where username like #{user.username}
+    </select>
+    <select id="findTotal" resultType="java.lang.Integer">
+        select count(*) from user;
+    </select>
+    <insert id="saveUser" parameterType="com.cyt.domain.User">
+        <!-- 配置插入操作后，获取插入数据的 id ，其中keyProperty对应的是实体类中的名称-->
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        <!-- 字段的顺序必须和 User 类中的类成员变量顺序一致，且 #()取值与 getXXX 一致-->
+        insert into user(username,address,sex,birthday)values(#{username},#{address},#{sex},#{birthday});
+    </insert>
+    <update id="updateUser" parameterType="com.cyt.domain.User">
+        update user set username=#{username},address=#{address},sex=#{sex},birthday=#{birthday} where id=#{id};
+    </update>
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id=#{user_id};//此处对名称无要求
+    </delete>
+</mapper>

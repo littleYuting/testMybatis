@@ -6,9 +6,9 @@ import java.util.Date;
 public class User implements Serializable {
     private Integer id;
     private String username;
-    private Date birthday;
-    private String sex;
     private String address;
+    private String sex;
+    private Date birthday;
 
     public Integer getId() {
         return id;

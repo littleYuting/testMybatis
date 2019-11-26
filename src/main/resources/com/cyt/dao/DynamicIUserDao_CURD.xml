@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyt.dao.IUserDao">
+    <resultMap id="userMap" type="com.cyt.domain.User1">
+        <id property="userId" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="userAddress" column="address"></result>
+        <result property="userSex" column="sex"></result>
+        <result property="userBirthday" column="birthday"></result>
+    </resultMap>
+    <select id="findAll" resultType="User">
+        <include refid="defaultUser"></include>
+--         select * from user where 1=1;
+    </select>
+    <select id="testMapLabel" parameterType="java.util.Map">
+        insert into user
+        <!-- foreach标签的collection属性默认值为：_parameter，非默认情况下，应与 dao接口方法保持一致，eg. void testMapLabel(@Param(value = "userMaps") Map<String, Object> userMap)-->
+            <!-- 方法一： 注意item 和 index 的区别-->
+<!--        <foreach collection="userMaps" item="key" index="key1" open="(" close=")" separator=",">-->
+<!--            ${key1} &lt;!&ndash;必须取 ${index}，否则会报错&ndash;&gt;-->
+<!--        </foreach>-->
+<!--        values-->
+<!--        <foreach collection="userMaps" item="value" index="value1" open="(" close=")" separator=",">-->
+<!--            #{value}&lt;!&ndash;必须取 #{item}，否则会报错&ndash;&gt;-->
+<!--        </foreach>-->
+        <!-- 方法二 : userMaps.keys userMaps.values-->
+        <foreach collection="userMaps.keys" item="key" open="(" close=")" separator=",">
+            ${key}
+        </foreach>
+        values
+        <!-- 方法三报错：显示value没找到-->
+<!--        <foreach collection="userMaps.keys" item="key" open="(" close=")" separator=",">-->
+<!--            #{userMaps[${key}]}-->
+        <foreach collection="userMaps.values" item="value" open="(" close=")" separator=",">
+            #{value}
+        </foreach>
+    </select>
+    <select id="testChooseLabel" parameterType="user" resultType="User">
+        <include refid="defaultUser"></include>
+        <where>
+            <choose>
+                <when test="username != null and username != ''">
+                    and username = #{username}
+                </when>
+                <when test="sex != null and sex != ''">
+                    and sex = #{sex}
+                </when>
+                <otherwise>
+                    and address = #{address}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+    <update id="testSetLabel" parameterType="user">
+        update user
+        <trim prefix="set" suffix="where id=#{id}" suffixOverrides=",">
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="username != null and username != ''">
+                username = #{username},<!--最后多出来的,并不会出现在结果sql语句中-->
+            </if>
+        </trim>
+    </update>
+    <!-- 根据条件查询 if 标签-->
+    <select id="findUserByCondition" resultMap="userMap" parameterType="user1">
+        select * from user <!--where 1=1-->
+        <trim prefix="where" prefixOverrides="and | or" suffixOverrides=",">
+            <if test="userName != null">
+                and username = #{userName}
+            </if>
+            <if test="userSex != null">
+                and sex = #{userSex}
+            </if>
+        </trim>
+    </select>
+    <!--根据queryvo中提供的id集合实现查询用户列表-->
+    <select id="findUserInIds" parameterType="QueryVo" resultType="user">
+        <include refid="defaultUser"></include>
+        <where>
+            <if test="ids != null or ids.size() > 0">
+                <foreach collection="ids" open="id in (" close=")" item="uid" separator=",">
+                    ${uid}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <sql id="defaultUser">
+        select * from user
+    </sql>
+</mapper>

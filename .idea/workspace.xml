@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="104f05e7-333a-4c8b-ac28-10ebaaf6a3a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/QueryVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DynamicSqlMapConfig_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/DynamicIUserDao_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/DynamicSQLTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cyt/test/MybatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/MybatisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cyt/test/MybatisTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/MybatisTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,7 +60,17 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test_spring_03" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/cyt/dao" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cyt.test" />
+      <recent name="com.cyt.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JavaLearing\code\testMybatis\src\main\resources\com\cyt\dao" />
+      <recent name="E:\JavaLearing\code\testMybatis\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,21 +84,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MybatisTest.testDaoMapper">
-    <configuration name="MybatisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MybatisTest" />
-      <module name="testMybatis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cyt.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MybatisTest.testDaoImpl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DynamicSQLTest.testMapLabel">
+    <configuration name="DynamicSQLTest.testChooseLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -78,14 +94,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MybatisTest" />
-      <option name="METHOD_NAME" value="testDaoImpl" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
+      <option name="METHOD_NAME" value="testChooseLabel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MybatisTest.testDaoMapper" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DynamicSQLTest.testFindByCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -94,8 +110,56 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MybatisTest" />
-      <option name="METHOD_NAME" value="testDaoMapper" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
+      <option name="METHOD_NAME" value="testFindByCondition" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DynamicSQLTest.testFindUserInIds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testMybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cyt.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cyt.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
+      <option name="METHOD_NAME" value="testFindUserInIds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DynamicSQLTest.testMapLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testMybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cyt.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cyt.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
+      <option name="METHOD_NAME" value="testMapLabel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DynamicSQLTest.testSetLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="testMybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cyt.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cyt.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
+      <option name="METHOD_NAME" value="testSetLabel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,9 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MybatisTest.testDaoMapper" />
-        <item itemvalue="JUnit.MybatisTest.testDaoImpl" />
-        <item itemvalue="Application.MybatisTest" />
+        <item itemvalue="JUnit.DynamicSQLTest.testMapLabel" />
+        <item itemvalue="JUnit.DynamicSQLTest.testFindByCondition" />
+        <item itemvalue="JUnit.DynamicSQLTest.testSetLabel" />
+        <item itemvalue="JUnit.DynamicSQLTest.testChooseLabel" />
+        <item itemvalue="JUnit.DynamicSQLTest.testFindUserInIds" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +186,11 @@
       <option name="presentableId" value="Default" />
       <updated>1574247075084</updated>
       <workItem from="1574247078260" duration="10242000" />
-      <workItem from="1574298627684" duration="25294000" />
+      <workItem from="1574298627684" duration="27337000" />
+      <workItem from="1574403473989" duration="14279000" />
+      <workItem from="1574576658773" duration="4046000" />
+      <workItem from="1574644987908" duration="29386000" />
+      <workItem from="1574753095691" duration="3500000" />
     </task>
     <servers />
   </component>
@@ -132,7 +202,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
