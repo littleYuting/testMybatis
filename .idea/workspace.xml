@@ -2,26 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="104f05e7-333a-4c8b-ac28-10ebaaf6a3a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/QueryVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DynamicSqlMapConfig_CURD.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig_CURD.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/DynamicIUserDao_CURD.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao_CURD.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbcConfig.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/DynamicSQLTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IAccountDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IRoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/AccountUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IAccountDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IRoleDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/multiTableConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/MultiTableRelationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/DynamicSqlMapConfig_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SqlMapConfig_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/DynamicIUserDao_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao_CURD.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/domain/QueryVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/cyt/domain/User1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jdbcConfig.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/DynamicSQLTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/IUserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cyt/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cyt/dao/IUserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cyt/test/MybatisTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cyt/test/MybatisTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/IUserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cyt/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cyt/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/cyt/test/MybatisTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/cyt/test/MybatisTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,12 +66,13 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/cyt/dao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cyt.test" />
+      <recent name="com.cyt.dao" />
       <recent name="com.cyt.domain" />
+      <recent name="com.cyt.test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\JavaLearing\code\testMybatis\src\main\resources\com\cyt\dao" />
@@ -84,8 +91,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DynamicSQLTest.testMapLabel">
-    <configuration name="DynamicSQLTest.testChooseLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MultiTableRelationTest.testFindRoleUsers">
+    <configuration name="MultiTableRelationTest.testFindAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -94,14 +101,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
-      <option name="METHOD_NAME" value="testChooseLabel" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MultiTableRelationTest" />
+      <option name="METHOD_NAME" value="testFindAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLTest.testFindByCondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MultiTableRelationTest.testFindAllRoles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -110,14 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
-      <option name="METHOD_NAME" value="testFindByCondition" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MultiTableRelationTest" />
+      <option name="METHOD_NAME" value="testFindAllRoles" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLTest.testFindUserInIds" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MultiTableRelationTest.testFindAllUses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -126,14 +133,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
-      <option name="METHOD_NAME" value="testFindUserInIds" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MultiTableRelationTest" />
+      <option name="METHOD_NAME" value="testFindAllUses" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLTest.testMapLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MultiTableRelationTest.testFindRoleUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -142,14 +149,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
-      <option name="METHOD_NAME" value="testMapLabel" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MultiTableRelationTest" />
+      <option name="METHOD_NAME" value="testFindRoleUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicSQLTest.testSetLabel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MultiTableRelationTest.testFindUserAccounts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="testMybatis" />
       <extension name="coverage">
         <pattern>
@@ -158,8 +165,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cyt.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cyt.test.DynamicSQLTest" />
-      <option name="METHOD_NAME" value="testSetLabel" />
+      <option name="MAIN_CLASS_NAME" value="com.cyt.test.MultiTableRelationTest" />
+      <option name="METHOD_NAME" value="testFindUserAccounts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicSQLTest.testMapLabel" />
-        <item itemvalue="JUnit.DynamicSQLTest.testFindByCondition" />
-        <item itemvalue="JUnit.DynamicSQLTest.testSetLabel" />
-        <item itemvalue="JUnit.DynamicSQLTest.testChooseLabel" />
-        <item itemvalue="JUnit.DynamicSQLTest.testFindUserInIds" />
+        <item itemvalue="JUnit.MultiTableRelationTest.testFindRoleUsers" />
+        <item itemvalue="JUnit.MultiTableRelationTest.testFindAllUses" />
+        <item itemvalue="JUnit.MultiTableRelationTest.testFindAllRoles" />
+        <item itemvalue="JUnit.MultiTableRelationTest.testFindUserAccounts" />
+        <item itemvalue="JUnit.MultiTableRelationTest.testFindAll" />
       </list>
     </recent_temporary>
   </component>
@@ -190,8 +197,20 @@
       <workItem from="1574403473989" duration="14279000" />
       <workItem from="1574576658773" duration="4046000" />
       <workItem from="1574644987908" duration="29386000" />
-      <workItem from="1574753095691" duration="3500000" />
+      <workItem from="1574753095691" duration="13647000" />
+      <workItem from="1574818491624" duration="9273000" />
+      <workItem from="1574837281353" duration="675000" />
+      <workItem from="1574840355531" duration="2773000" />
+      <workItem from="1574944664347" duration="623000" />
     </task>
+    <task id="LOCAL-00001" summary="mybatis 的 CURD操作，动态 SQL 等">
+      <created>1574757018024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574757018024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,5 +228,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mybatis 的 CURD操作，动态 SQL 等" />
+    <option name="LAST_COMMIT_MESSAGE" value="mybatis 的 CURD操作，动态 SQL 等" />
   </component>
 </project>

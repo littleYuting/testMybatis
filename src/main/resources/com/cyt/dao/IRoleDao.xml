@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cyt.dao.IRoleDao">
+    <resultMap id="roleMap1" type="role">
+        <id property="id" column="id"></id>
+        <result property="roleName" column="role_name"></result>
+        <result property="roleDesc" column="role_desc"></result>
+    </resultMap>
+    <resultMap id="roleMap2" type="role">
+        <!--column 值必须与sql语句生成的表的字段名一致-->
+        <id property="id" column="rid"></id>
+        <result property="roleName" column="rname"></result>
+        <result property="roleDesc" column="rdesc"></result>
+        <collection property="users" ofType="user">
+            <id property="id" column="id"></id>
+            <result property="username" column="username"></result>
+            <result property="address" column="address"></result>
+            <result property="sex" column="sex"></result>
+            <result property="birthday" column="birthday"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllRoles" resultMap="roleMap1">
+        select * from role
+    </select>
+    <!-- 多对多映射 获取角色所对应的用户 -->
+    <select id="findRoleUsers" resultMap="roleMap2">
+        select u.*,r.id as rid,r.role_name as rname,r.role_desc as rdesc from role r
+            left outer join user_role ur on ur.rid=r.id
+            left outer join user u on u.id=ur.uid;
+    </select>
+    <!-- 多对多映射 获取用户所对应的的角色 -->
+    <select id="findUserRoles" resultMap="roleMap2">
+        select u.*,r.id as rid,r.role_name as rname,r.role_desc as rdesc from user u
+            left outer join user_role ur on ur.uid=u.id
+            left outer join role r on r.id=ur.rid;
+    </select>
+</mapper>

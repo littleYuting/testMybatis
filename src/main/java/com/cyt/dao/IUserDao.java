@@ -4,6 +4,7 @@ import com.cyt.domain.QueryVo;
 import com.cyt.domain.User;
 import com.cyt.domain.User1;
 //import org.apache.ibatis.annotations.Select;
+import com.cyt.domain.User2;
 import com.cyt.mybatis.annotations.*;
 import org.apache.ibatis.annotations.Param;
 
@@ -95,4 +96,9 @@ public interface IUserDao {
      * @return
      */
     void testMapLabel(@Param(value = "userMaps") Map<String, Object> userMap);
+
+    /**
+     * 找到用户对应的账户信息
+     */
+    List<User2> findUserAccounts();
 }

@@ -4,6 +4,7 @@ import com.cyt.dao.IUserDao;
 import com.cyt.domain.QueryVo;
 import com.cyt.domain.User;
 import com.cyt.domain.User1;
+import com.cyt.domain.User2;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -107,6 +108,11 @@ public class UserDaoImpl implements IUserDao {
     @Override
     public void testMapLabel(@Param(value = "userMaps") Map<String, Object> userMap) {
 
+    }
+
+    @Override
+    public List<User2> findUserAccounts() {
+        return null;
     }
 
 }
