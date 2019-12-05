@@ -18,13 +18,13 @@
         insert into user
         <!-- foreach标签的collection属性默认值为：_parameter，非默认情况下，应与 dao接口方法保持一致，eg. void testMapLabel(@Param(value = "userMaps") Map<String, Object> userMap)-->
             <!-- 方法一： 注意item 和 index 的区别-->
-<!--        <foreach collection="userMaps" item="key" index="key1" open="(" close=")" separator=",">-->
-<!--            ${key1} &lt;!&ndash;必须取 ${index}，否则会报错&ndash;&gt;-->
-<!--        </foreach>-->
-<!--        values-->
-<!--        <foreach collection="userMaps" item="value" index="value1" open="(" close=")" separator=",">-->
-<!--            #{value}&lt;!&ndash;必须取 #{item}，否则会报错&ndash;&gt;-->
-<!--        </foreach>-->
+        <foreach collection="userMaps" item="key" index="key1" open="(" close=")" separator=",">
+            ${key1} <!--必须取 ${index}，否则会报错-->
+        </foreach>
+        values
+        <foreach collection="userMaps" item="value" index="value1" open="(" close=")" separator=",">
+            #{value}<!--必须取 #{item}，否则会报错-->
+        </foreach>
         <!-- 方法二 : userMaps.keys userMaps.values-->
         <foreach collection="userMaps.keys" item="key" open="(" close=")" separator=",">
             ${key}

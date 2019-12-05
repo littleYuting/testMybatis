@@ -25,7 +25,7 @@ import java.util.Map;
 public class XMLConfigBuilder {
 
     /**
-     * 解析主配置文件，把里面的内容填充到DefaultSqlSession所需要的地方
+     * 解析主配置文件，把里面的内容填充到 DefaultSqlSession 所需要的地方
      * 使用的技术：
      *      dom4j+xpath
      */
@@ -109,7 +109,6 @@ public class XMLConfigBuilder {
                 e.printStackTrace();
             }
         }
-
     }
 
     /**

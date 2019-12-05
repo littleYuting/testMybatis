@@ -7,8 +7,6 @@
     <properties url="file:///E:/JavaLearing/code/testMybatis/src/main/resources/jdbcConfig.properties"></properties>
     <settings>
         <setting name="logImpl" value="STDOUT_LOGGING"/>
-        <setting name="lazyLoadingEnabled" value="true"/>
-        <setting name="aggressiveLazyLoading" value="true"/>
     </settings>
     <typeAliases>
         <package name="com.cyt.domain"/>
@@ -25,8 +23,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com/cyt/dao/IAccountDao.xml"></mapper>
-        <mapper resource="com/cyt/dao/IUserDao.xml"></mapper>
-        <mapper resource="com/cyt/dao/IRoleDao.xml"></mapper>
+        <mapper class="com.cyt.dao.IUserDao_annotation"/>
+        <mapper class="com.cyt.dao.IAccountDao_annotation"/>
     </mappers>
 </configuration>

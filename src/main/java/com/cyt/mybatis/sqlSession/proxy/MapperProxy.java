@@ -1,7 +1,7 @@
 package com.cyt.mybatis.sqlSession.proxy;
 
 import com.cyt.mybatis.cfg.Mapper;
-import com.itheima.mybatis.sqlsession.utils.Executor;
+import com.cyt.mybatis.utils.Executor;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

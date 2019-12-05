@@ -12,6 +12,7 @@
     </resultMap>
 -->
 <mapper namespace="com.cyt.dao.IUserDao">
+
     <!--PreparedStatement对象的执行方法
         1. execute:能执行CRUD中的任意一种语句，返回值是一个boolean类型，表示是否有结果集；
         2. executeUpdate：只能执行CUD语句，查询语句无法执行，返回值是影响数据库记录的行数
@@ -21,7 +22,7 @@
         select * from user
     </select>
 <!--    <select id="findUserById" parameterType="java.lang.Integer" resultMap="userMap">-->
-    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.cyt.domain.User">
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.cyt.domain.User" useCache="true">
         select * from user where id=#{id}
     </select>
     <select id="findByName" parameterType="string" resultType="com.cyt.domain.User">

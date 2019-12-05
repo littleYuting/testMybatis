@@ -101,4 +101,9 @@ public interface IUserDao {
      * 找到用户对应的账户信息
      */
     List<User2> findUserAccounts();
+
+    /**
+     * 找到用户对应的账户信息_延迟加载
+     */
+    List<User2> findUserAccounts_delay();
 }

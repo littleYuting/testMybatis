@@ -19,5 +19,16 @@ public interface IAccountDao {
      */
     List<AccountUser> findAllUsers();
 
+    /**
+     * 查询所有用户(延迟缓存)
+     * @return
+     */
+    List<Account> findAll_testLazy();
+
+    /**
+     * 查询指定用户 id 下的所有账户
+     * @return
+     */
+    List<Account> findAccountById(Integer uid);
 
 }

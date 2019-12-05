@@ -70,13 +70,17 @@ public class MultiTableRelationTest {
     }
 
     @Test
-    public void testFindAll(){
-        List<Account> accounts = accountDao.findAll();
+    public void testFindAll_delay(){
+        List<Account> accounts = accountDao.findAll_testLazy();
         for (Account a : accounts) {
             System.out.println("每个 account 的信息：");
             System.out.println(a);
             System.out.println(a.getUser());
         }
+    }
+    @Test
+    public void testFindUserAccounts_delay(){
+        List<User2> users = userDao.findUserAccounts_delay();
     }
     @Test
     public void testFindAllUsers(){

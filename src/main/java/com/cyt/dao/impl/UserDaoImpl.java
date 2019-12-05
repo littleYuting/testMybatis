@@ -115,4 +115,9 @@ public class UserDaoImpl implements IUserDao {
         return null;
     }
 
+    @Override
+    public List<User2> findUserAccounts_delay() {
+        return null;
+    }
+
 }

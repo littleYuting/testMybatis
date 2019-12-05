@@ -24,13 +24,14 @@ public class MybatisTest {
 
     private InputStream in;
     private SqlSession sqlSession;
+    private SqlSessionFactory factory;
     private IUserDao userDao;
 
     @Before//用于在测试方法之前执行
     public void init() throws Exception{
         in = Resources.getResourceAsStream("SqlMapConfig_CURD.xml");
         SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-        SqlSessionFactory factory = builder.build(in);
+        factory = builder.build(in);
         sqlSession = factory.openSession(true);//此处的true是设置自动提交
         userDao = sqlSession.getMapper(IUserDao.class);
     }
@@ -90,6 +91,43 @@ public class MybatisTest {
             System.out.println(u);
         }
         System.out.println(userDao.findTotal());
+    }
+
+    /**
+     * mybatis一级缓存，
+     * 1) 存储于 sqlSession 中，当 sqlSession 关闭时缓存消失
+     * 2) 当调用 sqlSession 的修改、添加、删除、commit、close 方法时，就会清空一级缓存；
+     */
+    @Test
+    public void testFirstLevelCache(){
+        User user1 = userDao.findUserById(41);
+//        sqlSession.close();
+//        sqlSession = factory.openSession(true);
+        sqlSession.clearCache(); // clearCache 在此处的功能等同于 sqlSession 关闭再开启；
+        userDao = sqlSession.getMapper(IUserDao.class);
+        User user2 = userDao.findUserById(41);
+        System.out.println(user1 == user2);
+    }
+
+    /**
+     * mybatis 二级缓存，需经过配置 【二级缓存中存放的是数据而不是对象！！！】
+     * 1) 存储于 sqlFactory 中，同一 factory 建立的多个 sqlSession 共享内存；
+     * 2) 配置步骤： mybatis 框架，即 SqlMapConfig.xml; 映射文件，即 IUserDao.xml; 让当前的操作支持二级缓存，即 sql 语句标签；
+     * 3）返回的 类 对象不同，但对象存储的数据相同；
+     */
+    @Test
+    public void testSecondLevelCache(){
+        SqlSession sqlSession1 = factory.openSession();
+        IUserDao userDao1 = sqlSession1.getMapper(IUserDao.class);
+        User user1 = userDao1.findUserById(41);
+        sqlSession1.close();//一级缓存关闭
+        SqlSession sqlSession2 = factory.openSession();
+        IUserDao userDao2 = sqlSession2.getMapper(IUserDao.class);
+        User user2 = userDao2.findUserById(41);
+        sqlSession2.close();//一级缓存关闭
+        System.out.println(user1);
+        System.out.println(user2);
+        System.out.println(user1 == user2);
     }
 //    @Test
 //    public void testDaoMapper() throws Exception{

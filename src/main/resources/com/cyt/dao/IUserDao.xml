@@ -18,8 +18,26 @@
             <result column="money" property="money"></result>
         </collection>
     </resultMap>
+    <resultMap id="userAccountMap_delay" type="user2">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="address" column="address"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <!--配置user对象中accounts集合的映射-一对多 <collection>,此处的column提供的是全限定类名-->
+        <!--注意此处的 ofType ，不写的话会报错： The error occurred while handling results,空指针异常-->
+        <collection property="accounts" column="id" ofType="account" select="com.cyt.dao.IAccountDao.findAccountById">
+        </collection>
+    </resultMap>
+
+    <!-- 开启 user 支持二级缓存 -->
+    <cache/>
+
     <select id="findUserAccounts" resultMap="userAccountMap">
         select * from user u left outer join account a on u.id=a.uid;
+    </select>
+    <select id="findUserAccounts_delay" resultMap="userAccountMap_delay">
+        select * from user;
     </select>
     <!-- 注意事项：
     1) mybatis 的映射配置文件位置必须和dao接口的包结构相同;
@@ -30,6 +48,10 @@
     <!-- 配置查询所有 -->
     <select id="findAll" resultType="com.cyt.domain.User">
         select * from user
+    </select>
+
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.cyt.domain.User" useCache="true">
+        select * from user where id=#{id}
     </select>
 
 </mapper>

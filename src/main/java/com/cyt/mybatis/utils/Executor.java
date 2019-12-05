@@ -1,4 +1,4 @@
-package com.itheima.mybatis.sqlsession.utils;
+package com.cyt.mybatis.utils;
 
 import com.cyt.mybatis.cfg.Mapper;
 
@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author 黑马程序员
- * @Company http://www.ithiema.com
  * 负责执行SQL语句，并且封装结果集
  */
 public class Executor {
